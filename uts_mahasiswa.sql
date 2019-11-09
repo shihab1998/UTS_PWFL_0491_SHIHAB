@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Nov 2019 pada 07.14
+-- Generation Time: 09 Nov 2019 pada 08.25
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -50,7 +50,9 @@ INSERT INTO `log` (`id_mhs`, `nim`, `no_hp_lama`, `no_hp_baru`, `tgl_ubah`) VALU
 (9, 2147483647, '2147483647', '99999999', '2019-11-09 12:12:07'),
 (10, 2147483647, '99999999', '81234321', '2019-11-09 12:12:41'),
 (11, 2147483647, '081234321', '09999999', '2019-11-09 12:14:33'),
-(12, 2147483647, '09999999', '08212112345', '2019-11-09 12:15:08');
+(12, 2147483647, '09999999', '08212112345', '2019-11-09 12:15:08'),
+(13, 2147483647, '08112345678', '081', '2019-11-09 14:18:23'),
+(14, 2147483647, '081', '0811234567', '2019-11-09 14:19:01');
 
 -- --------------------------------------------------------
 
@@ -72,18 +74,22 @@ CREATE TABLE `mhs` (
 --
 
 INSERT INTO `mhs` (`id_mhs`, `nim`, `nama_mhs`, `jns_kelamin`, `alamat_lengkap`, `no_hp`) VALUES
-(26, '161240000438', 'Umam Kari', 'Laki-Laki', 'Kepok, Bangsri', '08112345678'),
-(28, '161240000491', 'Shihab Kafibaih', 'Laki-Laki', 'Bulungan, Jepara', '08212112345');
+(26, '161240000888', 'Umam Kari', 'Laki-Laki', 'Kepok, Bangsri', '0811234567'),
+(28, '161240000491', 'Shihab Kafibaih', 'Laki-Laki', 'Bulungan, Jepara', '08212112345'),
+(29, '161240000411', 'Fikri', 'Perempuan', 'Jodang Kepol', '0881234785'),
+(30, '161240000555', 'Mariati', 'Perempuan', 'Srobyong, Mlonggo', '08721212321'),
+(31, '161240000989', 'Marina', 'Perempuan', 'Kedung, Waru', '08612242341');
 
 --
 -- Trigger `mhs`
 --
 DELIMITER $$
-CREATE TRIGGER `no_hp_update` BEFORE UPDATE ON `mhs` FOR EACH ROW INSERT INTO log
-SET nim = old.nim,
-no_hp_lama = old.no_hp,
-no_hp_baru = new.no_hp,
-tgl_ubah = NOW()
+CREATE TRIGGER `no_hp_update` AFTER UPDATE ON `mhs` FOR EACH ROW BEGIN
+IF (NEW.no_hp != OLD.no_hp) THEN
+		INSERT INTO log (nim, no_hp_lama, no_hp_baru, tgl_ubah)
+VALUES (old.nim, old.no_hp, new.no_hp, NOW());
+END IF;
+END
 $$
 DELIMITER ;
 
@@ -134,12 +140,12 @@ ALTER TABLE `mhs`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_mhs` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_mhs` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `mhs`
 --
 ALTER TABLE `mhs`
-  MODIFY `id_mhs` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_mhs` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
