@@ -10,7 +10,7 @@ class C_mahasiswa extends CI_Controller
 
 		if (!$this->form_validation->run()==false) {
 			$this->m_mahasiswa->tambahmhs();
-			redirect ('page/');
+			redirect ('page/lihatmhs');
 		}else {
 			redirect('page/tambahmhs');
 		}
@@ -23,7 +23,7 @@ class C_mahasiswa extends CI_Controller
 
 		if (!$this->form_validation->run()==false) {
 			$this->m_mahasiswa->ubahmhs();
-			redirect ('page/');
+			redirect ('page/lihatmhs');
 		}else {
 			redirect('page/ubahmhs');
 		}
@@ -33,9 +33,9 @@ class C_mahasiswa extends CI_Controller
 	{
 		if ($id_mhs != ""){
 			$this->m_mahasiswa->hapusmhs($id_mhs);
-			redirect('page');
+			redirect('page/lihatmhs');
 		}else{
-			redirect('page');
+			redirect('page/lihatmhs');
 		}
 	}
 

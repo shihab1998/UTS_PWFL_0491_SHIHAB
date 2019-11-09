@@ -5,6 +5,11 @@ class Page extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('v_home');
+	}
+
+	public function lihatmhs()
+	{
 		$data ['mhs'] = $this->m_mahasiswa->lihatmhs();
 		$this->load->view('v_mahasiswa',$data);
 	}
