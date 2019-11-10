@@ -6,7 +6,7 @@
 <body>
 	<center>
 		<h3>
-			<a href="<?php echo base_url('page/') ?>">Kembali</a> &nbsp; &nbsp;
+			<a href="<?php echo base_url('page/lihatmhs') ?>">Kembali</a> &nbsp; &nbsp;
 		</h3>
 	</center>
 	<?php foreach ($mhse as $itemmhs) {?> 

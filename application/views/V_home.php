@@ -17,7 +17,5 @@
 			<a href="<?php echo base_url('page/log') ?>">Log</a>
 		</h3>
 	</center>
-			
-</center>
 </body>
 </html>

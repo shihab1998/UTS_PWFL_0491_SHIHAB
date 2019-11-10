@@ -7,6 +7,7 @@
 	<center>
 		<h3>
 			<a href="<?php echo base_url('page/') ?>">Home</a> &nbsp; &nbsp;
+			<a href="<?php echo base_url('page/lihatmhs') ?>">Lihat Data</a> &nbsp; &nbsp;
 			<a href="<?php echo base_url('page/tambahmhs') ?>">Tambah</a> &nbsp; &nbsp;
 			<a href="<?php echo base_url('page/log') ?>">Log</a> &nbsp; &nbsp;
 		</h3>
@@ -41,4 +42,5 @@
 	</div>
 </center>
 </body>
+</center>
 </html>
