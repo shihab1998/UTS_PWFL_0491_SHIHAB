@@ -1,53 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>UTS PWFL SHIHAB</title>
-</head>
-<body>
-		<center>
-		<h3>
-			<a href="<?php echo base_url('page/') ?>">Home</a> &nbsp; &nbsp;
-			<a href="<?php echo base_url('page/lihatmhs') ?>">Lihat Data</a> &nbsp; &nbsp;
-			<a href="<?php echo base_url('page/tambahmhs') ?>">Tambah</a> &nbsp; &nbsp;
-			<a href="<?php echo base_url('page/log') ?>">Log</a> &nbsp; &nbsp;
-		</h3>
-	</center>
-<center>
-	<table>
-		<form action="<?php echo base_url('c_mahasiswa/tambahmhs'); ?>" method="POST">
-			<tr>
-				<td>NIM :</td>
-				<td><input type="number" name="nim" value="" required=""></td>
-			</tr>
-			<tr>
-				<td>Nama :</td>
-				<td><input type="text" name="nama" value="" required=""></td>
-			</tr>
-			<tr>
-				<td>Jenis Kelamin :</td>
-				<td>
-					<select name="jkl">
-						<option value="Laki-laki" >Laki-laki </option>
-						<option value="Perempuan" >Perempuan</option>		
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>Alamat :</td>
-				<td><input type="text" name="alamat" value="" required=""></td>
-			</tr>
-			<tr>
-				<td>No. Telp :</td>
-				<td><input type="number" name="nohp" value="" required=""></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Simpan" class="btn btn-primary"></td>
-				<td><input type="reset" value="Batal" class="btn btn-primary"></td>
-			</tr>
-			
-		</form>
+<div class="content-wrapper">
+  <div class="container">
+  <div id='notifications' ><center><h1><?php echo $this->session->flashdata('berhasil');?></h1></center></div>
+  <div id='notifications' ><center><h1><?php echo $this->session->flashdata('gagal');?></h1></center></div>
+	<section class="content">
+	    <div class="row">
+	    	<div class="col-md-12">
+	    		<div class="box box-warning">
+				    <div class="box-header with-border">
+				        <h3 class="box-title">
+				        <i class="fa fa-fw fa-plus"></i>Input Data Mahasiswa</h3>   
+				        <div class="btn-group pull-right">
+				            		<a href="<?php echo base_url('page/lihatmhs/'); ?>" class="btn btn-flat btn-danger btn-sm"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Kembali</a>
+				        </div>
+				    </div>
+<!-- 	<table> -->
+					<form action="<?php echo base_url('C_mhs/tambahmhs'); ?>" method="POST" class="form-horizontal" role="form">
+						<div class="box-body">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">NIM</label>
+								<div class="col-sm-8">
+		                    		<input type="number" class="form-control" id="nim" name="nim" placeholder="Isikan NIM" required="">
+		                  		</div>
+		                	</div>
 
-	</table>
-</center>
-</body>
-</html>
+		                	<div class="form-group">
+								<label class="col-sm-2 control-label">Nama Mahasiswa</label>
+								<div class="col-sm-8">
+		                    		<input type="text" class="form-control" id="nama" name="nama" placeholder="Isikan Nama Mahasiswa" required="">
+		                  		</div>
+		                	</div>
+
+		                	<div class="form-group">
+								<label class="col-sm-2 control-label">Jenis Kelamin</label>
+		                  		<div class="col-sm-8">
+				                    <select name="jk" class="form-control">
+										<option value="Laki-laki">Laki-laki</option>
+										<option value="Perempuan">Perempuan</option>
+									</select>
+				                </div>
+		                	</div>
+
+		                	<div class="form-group">
+								<label class="col-sm-2 control-label">Alamat</label>
+								<div class="col-sm-8" >
+		                    		<input type="text" class="form-control" id="alamat" name="alamat" placeholder="Isikan Alamat" required="">
+		                  		</div>
+		                	</div>
+
+		                	<div class="form-group">
+								<label class="col-sm-2 control-label">No. Hp</label>
+								<div class="col-sm-8">
+		                    		<input type="number" class="form-control" id="no_hp" name="no_hp" placeholder="Isikan No. Hp" required="">
+		                  		</div>
+		                	</div>
+
+		                	<div class="box-footer">
+		                		<label class="col-sm-2 control-label"></label>
+		                		<div class="col-sm-8">
+		                			<button type="submit" class="btn btn-warning">Simpan</button>
+		                		</div>
+		              		</div>
+						</div>
+					</form>
+				<!-- </table> -->
+				</div>			
+			</div>
+		</div>
+	</section>
+  </div>
+</div>
+
+<!-- 	</table> -->

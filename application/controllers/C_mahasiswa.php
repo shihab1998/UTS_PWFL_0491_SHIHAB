@@ -6,8 +6,11 @@ class C_mahasiswa extends CI_Controller
 	public function tambahmhs()
 	{
 		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nim','nim','required');
 		$this->form_validation->set_rules('nama','nama','required');
-
+		$this->form_validation->set_rules('jk','jk','required');
+		$this->form_validation->set_rules('alamat','alamat','required');
+		$this->form_validation->set_rules('no_hp','no_hp','required');
 		if (!$this->form_validation->run()==false) {
 			$this->m_mahasiswa->tambahmhs();
 			redirect ('page/lihatmhs');
