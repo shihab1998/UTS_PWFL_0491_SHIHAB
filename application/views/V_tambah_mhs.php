@@ -14,7 +14,7 @@
 				        </div>
 				    </div>
 <!-- 	<table> -->
-					<form action="<?php echo base_url('C_mhs/tambahmhs'); ?>" method="POST" class="form-horizontal" role="form">
+					<form action="<?php echo base_url('c_mahasiswa/tambahmhs'); ?>" method="POST" class="form-horizontal" role="form">
 						<div class="box-body">
 							<div class="form-group">
 								<label class="col-sm-2 control-label">NIM</label>
@@ -33,7 +33,7 @@
 		                	<div class="form-group">
 								<label class="col-sm-2 control-label">Jenis Kelamin</label>
 		                  		<div class="col-sm-8">
-				                    <select name="jk" class="form-control">
+				                    <select name="jkl" class="form-control">
 										<option value="Laki-laki">Laki-laki</option>
 										<option value="Perempuan">Perempuan</option>
 									</select>
@@ -50,7 +50,7 @@
 		                	<div class="form-group">
 								<label class="col-sm-2 control-label">No. Hp</label>
 								<div class="col-sm-8">
-		                    		<input type="number" class="form-control" id="no_hp" name="no_hp" placeholder="Isikan No. Hp" required="">
+		                    		<input type="number" class="form-control" id="no_hp" name="nohp" placeholder="Isikan No. Hp" required="">
 		                  		</div>
 		                	</div>
 

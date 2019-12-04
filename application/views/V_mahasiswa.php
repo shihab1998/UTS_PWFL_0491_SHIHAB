@@ -20,6 +20,7 @@
 						<th>Jenis Kelamin</th>
 						<th>Alamat</th>
 						<th>No. Hp</th>
+						<th>Action</th>
 					</tr>	
 				<?php  $no = 1; foreach ($mhs as $itemmhs ) {?>
 				</thead>
@@ -35,7 +36,7 @@
 
 							<a href="<?php echo base_url('page/editmhs/').$itemmhs['id_mhs']; ?>" class="btn btn-flat btn-primary btn-sm"><span class="fa fa-edit"></span></a>
 
-							<a href="<?php echo base_url('mhs/hapusmhs/').$itemmhs['id_mhs']; ?>" onclick="return confirm('Apakah Anda Yakin, Mau Menghapus data?')" class="btn btn-flat btn-danger btn-sm"><span class="fa fa-trash"></span></a>
+							<a href="<?php echo base_url('c_mahasiswa/hapusmhs/').$itemmhs['id_mhs']; ?>" onclick="return confirm('Apakah Anda Yakin, Mau Menghapus data?')" class="btn btn-flat btn-danger btn-sm"><span class="fa fa-trash"></span></a>
 
 	                    </td>
 					</tr>

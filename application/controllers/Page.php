@@ -35,7 +35,7 @@ class Page extends CI_Controller {
 
 	public function tambahmhs()
 	{
-					$data = array(
+			$data = array(
 			"title"	=> "Data Mahasiswa",
 			"home"	=> "class='nav-item '",
 			"vtmbh"	=> "class='nav-item active'",

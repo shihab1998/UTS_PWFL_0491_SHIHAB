@@ -43,7 +43,7 @@ class M_mahasiswa extends CI_Model
 				'alamat_lengkap' => $this->input->post('alamat'),
 				'no_hp' => $this->input->post('nohp')
 			);
-			$id_lama = $this->input->post('id_mhs');
+			$id_lama = $this->input->post('id');
 			$this->db->where('id_mhs',$id_lama);
 			return $this->db->update('mhs',$data);	
 		}

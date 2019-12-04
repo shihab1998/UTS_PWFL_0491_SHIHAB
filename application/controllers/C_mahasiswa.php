@@ -8,9 +8,9 @@ class C_mahasiswa extends CI_Controller
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nim','nim','required');
 		$this->form_validation->set_rules('nama','nama','required');
-		$this->form_validation->set_rules('jk','jk','required');
+		$this->form_validation->set_rules('jkl','jkl','required');
 		$this->form_validation->set_rules('alamat','alamat','required');
-		$this->form_validation->set_rules('no_hp','no_hp','required');
+		$this->form_validation->set_rules('nohp','nohp','required');
 		if (!$this->form_validation->run()==false) {
 			$this->m_mahasiswa->tambahmhs();
 			redirect ('page/lihatmhs');
@@ -23,7 +23,11 @@ class C_mahasiswa extends CI_Controller
 	{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama','nama','required');
-
+		$this->form_validation->set_rules('nim','nim','required');
+		$this->form_validation->set_rules('nama','nama','required');
+		$this->form_validation->set_rules('jkl','jkl','required');
+		$this->form_validation->set_rules('alamat','alamat','required');
+		$this->form_validation->set_rules('nohp','nohp','required');
 		if (!$this->form_validation->run()==false) {
 			$this->m_mahasiswa->ubahmhs();
 			redirect ('page/lihatmhs');

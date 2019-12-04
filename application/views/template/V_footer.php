@@ -35,9 +35,16 @@
 <script src="<?=base_url()?>assets/plugins/flot/jquery.flot.pie.min.js"></script>
 <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
 <script src="<?=base_url()?>assets/plugins/flot/jquery.flot.categories.min.js"></script>
+
 <!-- Page script -->
 <!-- page script -->
 <script type="text/javascript">
+   $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+   
+    });
+  })  
   $(function() {
 
     $('#msg').slideDown('slow').delay(4000).slideUp('slow');
@@ -45,57 +52,54 @@
 </script>
 
 <script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-   
-    });
-
-
-        /*
-     * DONUT CHART
-     * -----------
-     */
-
-    var donutData = [
-      {label: "Laki-laki", data: <?= $lk ?>, color: "#3c8dbc"},
-      {label: "Perempuan", data: <?= $pr ?>, color: "#0073b7"},
-    ];
-    $.plot("#donut-chart", donutData, {
-      series: {
+  Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in January, 2018'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
         pie: {
-          show: true,
-          radius: 1,
-          innerRadius: 0.5,
-          label: {
-            show: true,
-            radius: 2 / 3,
-            formatter: labelFormatter,
-            threshold: 0.1
-          }
-
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
         }
-      },
-      legend: {
-        show: false
-      }
-    });
-    /*
-     * END DONUT CHART
-     */
-  });
-
-    /*
-   * Custom Label formatter
-   * ----------------------
-   */
-  function labelFormatter(label, series) {
-    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-        + label
-        + "<br>"
-        + Math.round(series.percent) + "%</div>";
-  }
-</script>
-<script>   
-  $('#notifications').slideDown('slow').delay(2000).slideUp('slow');
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Chrome',
+            y: 61.41,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Internet Explorer',
+            y: 11.84
+        }, {
+            name: 'Firefox',
+            y: 10.85
+        }, {
+            name: 'Edge',
+            y: 4.67
+        }, {
+            name: 'Safari',
+            y: 4.18
+        }, {
+            name: 'Other',
+            y: 7.05
+        }]
+    }]
+});
+ 
 </script>

@@ -18,7 +18,11 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
     <!-- DataTables -->
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap.css">
-  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- hight chart -->
+  <script src="<?=base_url()?>assets/code/highcharts.js"></script>
+  <script src="<?=base_url()?>assets/code/modules/exporting.js"></script>
+  <script src="<?=base_url()?>assets/code/modules/export-data.js"></script>
 
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 </head>
